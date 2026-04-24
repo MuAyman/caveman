@@ -29,7 +29,7 @@ Caveman makes AI coding agents respond in compressed caveman-style prose — cut
 
 | File | What it controls |
 |------|-----------------|
-| `skills/caveman/SKILL.md` | Caveman behavior: intensity levels, rules, wenyan mode, auto-clarity, persistence. Only file to edit for behavior changes. |
+| `skills/caveman/SKILL.md` | Caveman behavior: intensity levels, rules, auto-clarity, persistence. Only file to edit for behavior changes. |
 | `rules/caveman-activate.md` | Always-on auto-activation rule body. CI injects into Cursor, Windsurf, Cline, Copilot rule files. Edit here, not agent-specific copies. |
 | `skills/caveman-commit/SKILL.md` | Caveman commit message behavior. Fully independent skill. |
 | `skills/caveman-review/SKILL.md` | Caveman code review behavior. Fully independent skill. |
@@ -108,9 +108,6 @@ Reads JSON from stdin. Three responsibilities:
 - `/caveman` → configured default (see `caveman-config.js`, defaults to `full`)
 - `/caveman lite` → `lite`
 - `/caveman ultra` → `ultra`
-- `/caveman wenyan` or `/caveman wenyan-full` → `wenyan`
-- `/caveman wenyan-lite` → `wenyan-lite`
-- `/caveman wenyan-ultra` → `wenyan-ultra`
 - `/caveman-commit` → `commit`
 - `/caveman-review` → `review`
 - `/caveman-compress` → `compress`
@@ -143,7 +140,7 @@ Skills = Markdown files with YAML frontmatter consumed by Claude Code's skill/pl
 
 ### Intensity levels
 
-Defined in `skills/caveman/SKILL.md`. Six levels: `lite`, `full` (default), `ultra`, `wenyan-lite`, `wenyan-full`, `wenyan-ultra`. Persists until changed or session ends.
+Defined in `skills/caveman/SKILL.md`. Three levels: `lite`, `full` (default), `ultra`. Persists until changed or session ends.
 
 ### Auto-clarity rule
 
